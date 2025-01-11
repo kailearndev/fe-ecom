@@ -1,10 +1,10 @@
-import { useNavigate } from "react-router";
-import useCartStore from "../store/cartStore";
-import ModalConfirm from "../layouts/modalconfirm";
-import { useRef, useState } from "react";
-import { ProductService } from "../services/productService";
-import QRCode from "react-qr-code";
+import { useRef } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import QRCode from "react-qr-code";
+import { useNavigate } from "react-router";
+import ModalConfirm from "../layouts/modalconfirm";
+import { ProductService } from "../services/productService";
+import useCartStore from "../store/cartStore";
 
 
 const Cart = () => {
