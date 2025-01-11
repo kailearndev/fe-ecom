@@ -23,7 +23,7 @@ const Navbar: FC<NavbarProps> = (props) => {
 
     return (
         <div className="flex flex-col">
-            <div className="navbar bg-base-100 fixed z-10 backdrop-blur-lg ">
+            <div className="navbar bg-base-00 fixed z-10 backdrop-blur-lg ">
                 <div className="flex-1">
                     <a onClick={() => navigate('/')} className="btn btn-ghost text-xl hover:rotate-3">👋hihi PC🙂‍↕️</a>
                 </div>
@@ -43,17 +43,18 @@ const Navbar: FC<NavbarProps> = (props) => {
                                         strokeWidth="2"
                                         d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                                 </svg>
-                                <span className="badge badge-sm indicator-item">{cartItems.length}</span>
+                                <span className={`badge badge-neutral indicator-item  `}>{cartItems.length}</span>
                             </div>
                         </div>
                         <div
                             tabIndex={0}
-                            className="card card-compact dropdown-content bg-base-100 z-[1] mt-3 w-52 shadow">
+                            className="card card-compact dropdown-content bg-slate-200  z-[1] mt-3 w-52 shadow">
                             <div className="card-body">
                                 {
-                                    !cartItems.length ? <span className="text-lg font-bold">Cart empty</span> :
+                                    !cartItems.length ? <span className="text-sm font-semibold">Giỏ hàng trống</span> :
                                         <>
-                                            <span className="text-lg font-bold">{cartItems.length} Items</span><span className="text-info">
+                                            <span className="text-lg font-bold">{cartItems.length} Sản phẩm</span>
+                                            <span className="text-info">
                                                 Total:
                                                 {
                                                     getTotalPrice().toLocaleString('vn-VN')
@@ -61,7 +62,7 @@ const Navbar: FC<NavbarProps> = (props) => {
                                                 }
                                             </span>
                                             <div className="card-actions">
-                                                <button onClick={() => navigate('/cart')} className="btn btn-primary btn-block">View cart</button>
+                                                <button onClick={() => navigate('/cart')} className="btn btn-primary btn-block">Xem giỏ hàng</button>
                                             </div></>
                                 }
 
@@ -79,14 +80,8 @@ const Navbar: FC<NavbarProps> = (props) => {
                         <ul
                             tabIndex={0}
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                            <li>
-                                <a className="justify-between">
-                                    Profile
-                                    <span className="badge">New</span>
-                                </a>
-                            </li>
-                            <li><a>Settings</a></li>
-                            <li onClick={handleLogout}><a>Logout</a></li>
+
+                            <li onClick={handleLogout}><a>Đăng xuất</a></li>
                         </ul>
                     </div>
                 </div>

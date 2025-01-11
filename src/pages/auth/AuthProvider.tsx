@@ -7,7 +7,7 @@ const AuthProvider = () => {
 
     return token ?
         <Navbar>
-            <div className="px-5">
+            <div className="px-5 py-5 scroll-smooth">
                 <Outlet />
             </div>
         </Navbar>

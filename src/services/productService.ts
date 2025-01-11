@@ -6,7 +6,11 @@ const getProduct = async () => {
     return response.data
 
 }
-
+const sendWebhook = async (data: any) => {
+    const response = await apiService.post('/webhook', data)
+    return response
+};
 export const ProductService = {
-    getProduct
+    getProduct,
+    sendWebhook
 }
